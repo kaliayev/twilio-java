@@ -56,12 +56,12 @@
               </execution>
             </executions>
             <configuration>
-                <keyname>${gpg.keyname}</keyname>
-                <passphrase>${gpg.passphrase}</passphrase>
-                <gpgArguments>
-                    <arg>--pinentry-mode</arg>
-                    <arg>loopback</arg>
-                </gpgArguments>
+              <keyname>${gpg.keyname}</keyname>
+              <passphrase>${gpg.passphrase}</passphrase>
+              <gpgArguments>
+                <arg>--pinentry-mode</arg>
+                <arg>loopback</arg>
+              </gpgArguments>
             </configuration>
           </plugin>
         </plugins>
@@ -257,7 +257,19 @@
       </plugin>
 
     </plugins>
+
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>https://nexus.cxengagelabs.net/content/repositories/snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus-releases</id>
+      <url>https://nexus.cxengagelabs.net/content/repositories/thirdparty/</url>
+    </repository>
+  </distributionManagement>
 
   <!-- Sonatype repo submission stuff -->
   <parent>
